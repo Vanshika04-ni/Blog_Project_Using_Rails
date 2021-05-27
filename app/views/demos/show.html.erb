@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @demo.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @demo.description %>
+</p>
+
+<p>
+  <strong>User name:</strong>
+  <%= @demo.user_name %>
+</p>
+<p>
+<strong>Reference Image</strong>
+<%= image_tag @demo.image,style:"width:540px;height:240px;display:block" %>
+</p>
+<p><b>Comments:<%= @demo.comments.count %></b></p>
+<h6><b>Add  comments</b></h6>
+<%= render @demo.comments   %>
+
+<%= render 'comments/form'  %>
+
+<%= link_to 'Edit', edit_demo_path(@demo) %> |
+<%= link_to 'Back', demos_path %>

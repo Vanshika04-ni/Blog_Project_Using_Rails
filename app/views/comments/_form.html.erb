@@ -1,0 +1,13 @@
+<%= form_with(model: [@demo,@demo.comments.build])do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :Reply %>
+      <%= form.text_area :body %>
+    </div>
+    
+    <%= form.submit "Submit" %>
+    <% end %>

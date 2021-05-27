@@ -1,0 +1,6 @@
+<div class="container">
+<p>Commented By:<%= comment.name %></p>
+<p>Comment:<%= comment.body %></p>
+<p>Time:<%= time_ago_in_words(comment.created_at) %></p>
+<p><%= link_to 'Delete', [comment.demo,comment],method: :delete %></p>
+</div>

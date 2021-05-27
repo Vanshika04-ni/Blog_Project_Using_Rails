@@ -1,0 +1,23 @@
+<% if @demo.empty? %>
+  <p>No Results Found<p>
+<% else %>    
+<% @demo.each do |i| %>
+  <div class="card" >
+  <div class="card-header">
+  <b> Published By :</b><%= i.user_name %>
+  </div>
+  <div class="card-body mt-5">
+    <h5 class="card-title">Title:<%= i.title %></h5>
+   <h5> <p class="card-text">Description:<%= i.description %></p></h5>
+   <% if i.image.attached? %>
+   <b>Reference Image</b><%= image_tag i.image, style:"width:540px;height:240px;display:block"%>
+   <% end %>
+    <div class="card-footer">
+    <%= link_to 'Delete', demo_path(i.id),method: :delete,class:"btn btn-outline-danger"%>
+    <%= link_to 'View', demo_path(i.id),class:"btn btn-outline-success"%>
+    <%= link_to 'Update', edit_demo_path(i.id),class:"btn btn-outline-primary"%>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
